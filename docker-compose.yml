@@ -1,11 +1,10 @@
-# Version 2.0
 services:
   nordpool:
     build:
       context: .
       dockerfile: Dockerfile.nordpool
     volumes:
-      - ./data:/app/data
+      - ./data:/app/nordpool/data
     ports:
       - "8000:8000"
       - "8080:80"
@@ -15,7 +14,7 @@ services:
       context: .
       dockerfile: Dockerfile.wifi
     volumes:
-      - ./data:/app/data
+      - ./data:/app/wifi_detector/data
     ports:
       - "8001:8001"
       - "8081:80"
