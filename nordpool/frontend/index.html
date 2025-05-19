@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nord Pool Electricity Prices</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Nord Pool Electricity Prices - Lithuania</h1>
+            <div class="data-source">
+                <span id="dataSource">Loading...</span>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <div class="calendar-container">
+                <div class="calendar-header">
+                    <button id="prevMonth" class="calendar-nav-btn">&lt;</button>
+                    <h2 id="currentMonth">Loading...</h2>
+                    <button id="nextMonth" class="calendar-nav-btn">&gt;</button>
+                </div>
+                <div class="calendar" id="calendar">
+                    <div class="calendar-weekdays">
+                        <div>Mon</div>
+                        <div>Tue</div>
+                        <div>Wed</div>
+                        <div>Thu</div>
+                        <div>Fri</div>
+                        <div>Sat</div>
+                        <div>Sun</div>
+                    </div>
+                    <div class="calendar-days" id="calendarDays">
+                        <!-- Calendar days will be generated here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div class="prices-container">
+                <h2 id="selectedDate">Loading...</h2>
+                <div class="price-legend">
+                    <div class="legend-item">
+                        <div class="legend-color high-price"></div>
+                        <span>≥ 70 EUR/MWh</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color normal-price"></div>
+                        <span>50-70 EUR/MWh</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color low-price"></div>
+                        <span>≤ 50 EUR/MWh</span>
+                    </div>
+                </div>
+                <div class="prices-table-container">
+                    <table class="prices-table">
+                        <thead>
+                            <tr>
+                                <th>Hour</th>
+                                <th>EUR/MWh</th>
+                                <th>ct/kWh</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pricesTableBody">
+                            <!-- Price data will be generated here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="price-summary">
+                    <div class="summary-item">
+                        <span class="summary-label">Min Price:</span>
+                        <span id="minPrice" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Max Price:</span>
+                        <span id="maxPrice" class="summary-value">-</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="summary-label">Avg Price:</span>
+                        <span id="avgPrice" class="summary-value">-</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

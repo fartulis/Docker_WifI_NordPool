@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "name": "Example Phone 1",
+        "mac": "00:11:22:33:44:55",
+        "manufacturer": "Apple"
+    },
+    {
+        "id": 2,
+        "name": "Example Phone 2",
+        "mac": "AA:BB:CC:DD:EE:FF",
+        "manufacturer": "Samsung"
+    }
+]
