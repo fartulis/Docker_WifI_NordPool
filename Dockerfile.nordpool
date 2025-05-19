@@ -1,16 +1,13 @@
-# Dockerfile.nordpool — v2.2
+# Dockerfile.nordpool — v3.0
 FROM python:3.10-slim
-
-# Create app directory and copy code
 WORKDIR /app
-COPY nordpool/ /app/nordpool
-COPY scripts/ /app/scripts
-
-# Install Python dependencies
-RUN pip install --no-cache-dir fastapi uvicorn pydantic requests
-
-# Expose the API port
+# Copy Nord Pool code
+COPY nordpool/backend ./backend
+COPY nordpool/scripts ./scripts
+COPY nordpool/frontend ./frontend
+# Install dependencies
+RUN pip install --no-cache-dir -r nordpool/requirements.txt
+# Expose ports
 EXPOSE 8000
-
-# Launch FastAPI app (module path reflects nordpool/backend/main.py)
-CMD ["uvicorn", "nordpool.backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# Run the FastAPI app
+CMD ["uvicorn", "backend.main:app", "--host", "0.0.0.0", "--port", "8000"]
