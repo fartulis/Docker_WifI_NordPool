@@ -1,4 +1,4 @@
-# Version 3.0
+# docker-compose.yml v3.1 cleaned
 services:
   nordpool-backend:
     build:

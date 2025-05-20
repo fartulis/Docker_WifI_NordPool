@@ -1,13 +1,9 @@
-# Dockerfile.wifi — v3.0
+# Dockerfile.wifi — cleaned v3.1
 FROM python:3.10-slim
 WORKDIR /app
-# Copy WiFi Detector code
 COPY wifi_detector/backend ./backend
 COPY wifi_detector/config ./config
 COPY wifi_detector/frontend ./frontend
-# Install dependencies
-RUN pip install --no-cache-dir -r wifi_detector/requirements.txt
-# Expose ports
+RUN pip install --no-cache-dir fastapi uvicorn
 EXPOSE 8001
-# Run the FastAPI app
 CMD ["uvicorn", "backend.app:app", "--host", "0.0.0.0", "--port", "8001"]
